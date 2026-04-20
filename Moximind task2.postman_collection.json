@@ -1,0 +1,181 @@
+{
+  "info": {
+    "_postman_id": "76eadf03-9c54-45e3-9e65-1a66c9210054",
+    "name": "Moximind task",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "24307249"
+  },
+  "item": [
+    {
+      "name": "List Users",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "exec": [
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {\r",
+              "    pm.response.to.have.status(200);\r",
+              "});\r",
+              "\r",
+              "const jsonData = pm.response.json();\r",
+              "\r",
+              "// Assert \"total\" exists\r",
+              "pm.test(\"Response contains total\", function () {\r",
+              "    pm.expect(jsonData).to.have.property('total');\r",
+              "});\r",
+              "\r",
+              "// Assert \"last_name\" for first and second user \r",
+              "pm.test(\"Validate last_name for first two users\", function () {\r",
+              "    pm.expect(jsonData.data[0].last_name).to.not.be.undefined; \r",
+              "    pm.expect(jsonData.data[1].last_name).to.not.be.undefined; \r",
+              "    console.log(\"User 1 Last Name: \" + jsonData.data[0].last_name);\r",
+              "});\r",
+              "\r",
+              "// Count users and compare to \"total\" \r",
+              "pm.test(\"User count in data matches total\", function () {\r",
+              "    const userCount = jsonData.data.length;\r",
+              "    pm.expect(userCount).to.be.at.most(jsonData.total); \r",
+              "});\r",
+              "\r",
+              "// Bonus: Create assertions for data types [\r",
+              "pm.test(\"Data types are valid\", function () {\r",
+              "    pm.expect(jsonData.page).to.be.a('number');\r",
+              "    pm.expect(jsonData.data).to.be.an('array'); \r",
+              "    pm.expect(jsonData.data[0].first_name).to.be.a('string'); \r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "x-api-key",
+            "value": "pro_558df45e0470144f18d46d384dd4ced11fb51beb155d22e66829f56dbb2c8dd0",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "https://reqres.in/api/users",
+          "protocol": "https",
+          "host": [
+            "reqres",
+            "in"
+          ],
+          "path": [
+            "api",
+            "users"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "exec": [
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "// Assert HTTP code 201 \r",
+              "pm.test(\"Status code is 201\", function () {\r",
+              "    pm.response.to.have.status(201);\r",
+              "});\r",
+              "\r",
+              "const response = pm.response.json();\r",
+              "\r",
+              "// Assert ID and timestamp of createdAt \r",
+              "pm.test(\"Response has ID and createdAt\", function () {\r",
+              "    pm.expect(response).to.have.property('id'); \r",
+              "    pm.expect(response).to.have.property('createdAt'); \r",
+              "});\r",
+              "\r",
+              "// Assert Response time < variable (limit = 400ms)\r",
+              "const limit = 400; \r",
+              "pm.test(\"Response time is less than \" + limit + \"ms\", function () {\r",
+              "    pm.expect(pm.response.responseTime).to.be.below(limit); \r",
+              "});\r",
+              "\r",
+              "// Bonus: Verify response schema \r",
+              "const schema = {\r",
+              "    \"type\": \"object\",\r",
+              "    \"properties\": {\r",
+              "        \"name\": { \"type\": \"string\" },\r",
+              "        \"job\": { \"type\": \"string\" },\r",
+              "        \"id\": { \"type\": \"string\" },\r",
+              "        \"createdAt\": { \"type\": \"string\" }\r",
+              "    },\r",
+              "    \"required\": [\"name\", \"job\", \"id\", \"createdAt\"]\r",
+              "};\r",
+              "\r",
+              "pm.test(\"Response schema is valid\", function () {\r",
+              "    pm.response.to.have.jsonSchema(schema);\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-api-key",
+            "value": "pro_558df45e0470144f18d46d384dd4ced11fb51beb155d22e66829f56dbb2c8dd0",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\": \"morpheus\",\r\n    \"job\": \"leader\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://reqres.in/api/users",
+          "protocol": "https",
+          "host": [
+            "reqres",
+            "in"
+          ],
+          "path": [
+            "api",
+            "users"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
