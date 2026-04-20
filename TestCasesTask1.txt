@@ -6,11 +6,8 @@ Precondition:
 Steps:
 
     1. Navigate to https://www.saucedemo.com/.
-
     2. Enter a valid username (e.g., standard_user).
-
     3. Enter the valid password secret_sauce.
-
     4. Click the "Login" button.
 
     Repeat for all provided usernames: locked_out_user, problem_user, performance_glitch_user, error_user, visual_user.
@@ -28,13 +25,9 @@ Precondition:
 Steps:
 
     1. Add all available products to the shopping cart one by one.
-
     2. Open the shopping cart.
-
     3. Verify that all selected products are present in the cart.
-
     4. Remove all products from the shopping cart.
-
     5. Verify that the cart is empty.
 
 Expected Result:
