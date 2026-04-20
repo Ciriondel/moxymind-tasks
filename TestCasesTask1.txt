@@ -1,64 +1,100 @@
-TC-1: Successful Login
+TC-1: Successful Login with all usernames
 
 Precondition:
-• Browser: Google Chrome (latest version)
+    Browser: Google Chrome (latest version)
 
 Steps:
-Open https://www.saucedemo.com/
-Enter all valid usernames standard_user, locked_out_user, problem_user, performance_glitch_user, error_user, visual_user
-Enter a valid password secret_sauce
 
+    1. Navigate to https://www.saucedemo.com/.
+
+    2. Enter a valid username (e.g., standard_user).
+
+    3. Enter the valid password secret_sauce.
+
+    4. Click the "Login" button.
+
+    Repeat for all provided usernames: locked_out_user, problem_user, performance_glitch_user, error_user, visual_user.
 
 Expected Result:
-• Login is successfull (standard_user)
-• Login is unsuccessfull (locked_out_user, error Message)
-• Login is successfull (problem_user)
-• Login is successfull (performance_glitch_user)
-• Login is successfull (error_user)
-• Login is successfull (visual_user)
+
+    • Login is successful for: standard_user, problem_user, performance_glitch_user, error_user, and visual_user.
+
+    • Login fails for locked_out_user (appropriate error message is displayed).
 -------------------------------------------------------------------
-TC-2: 
+TC-2: Adding and Removing Items from the Cart
 
 Precondition:
-• Successful Login from previous test case
-• Browser: Google Chrome
+    Browser: Google Chrome (or any supported browser)
 
 Steps:
-Add all the products to the shopping cart
-Verify adding to the cart
-Remove all the products to the shopping cart
-Verify removing from the cart
 
+    1. Add all available products to the shopping cart one by one.
+
+    2. Open the shopping cart.
+
+    3. Verify that all selected products are present in the cart.
+
+    4. Remove all products from the shopping cart.
+
+    5. Verify that the cart is empty.
 
 Expected Result:
-• 
+
+    • All products are successfully added to the cart initially.
+
+    • All products are successfully removed, leaving the cart empty at the end of the test.
 -------------------------------------------------------------------
 TC-3: Complete Checkout
 
 Precondition:
-• Browser: Google Chrome (latest version)
+    Browser: Google Chrome (or any supported browser)
 
 Steps:
-Login
-Add product to the cart
-Open cart
-Click on checkout button
-Fill First name, Last name and Zip/Postal code 
-Click on Continue button
-Verify item name in the cart
-Click on Finish button
+    1. Navigate to https://www.saucedemo.com/.
+
+    2. Enter a valid username (e.g., standard_user).
+
+    3. Enter the valid password secret_sauce.
+
+    4. Click the "Login" button
+
+    5. Add a product to the shopping cart.
+
+    6. Open the shopping cart.
+
+    7. Click the "Checkout" button.
+
+    8. Enter the First Name, Last Name, and Zip/Postal Code.
+
+    9. Click the "Continue" button.
+
+    10. Verify that the item name in the order overview matches the item added.
+
+    11 .Click the "Finish" button.
 
 Expected Result:
-•  Verify your order confirmation. Whole flow should pass completle
+
+    • The order confirmation page is displayed.
+
+    • The entire checkout workflow is completed successfully without errors.
 -------------------------------------------------------------------
-TC-4: 
+TC-4: Login with delay
 
 Precondition:
-• Browser: Google Chrome (latest version)
+    Browser: Google Chrome (or any supported browser)
 
 Steps:
 
+    1. Navigate to the login page.
 
+    2. Enter the username performance_glitch_user.
+
+    3. Enter the valid password secret_sauce.
+
+    4. Click the "Login" button.
 
 Expected Result:
-• 
+
+    • The login process completes and the Products page loads successfully.
+
+    • Note: A noticeable delay (latency) during the transition to the inventory page is expected for this specific user.
