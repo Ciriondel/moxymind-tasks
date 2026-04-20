@@ -1,0 +1,64 @@
+TC-1: Successful Login
+
+Precondition:
+• Browser: Google Chrome (latest version)
+
+Steps:
+Open https://www.saucedemo.com/
+Enter all valid usernames standard_user, locked_out_user, problem_user, performance_glitch_user, error_user, visual_user
+Enter a valid password secret_sauce
+
+
+Expected Result:
+• Login is successfull (standard_user)
+• Login is unsuccessfull (locked_out_user, error Message)
+• Login is successfull (problem_user)
+• Login is successfull (performance_glitch_user)
+• Login is successfull (error_user)
+• Login is successfull (visual_user)
+-------------------------------------------------------------------
+TC-2: 
+
+Precondition:
+• Successful Login from previous test case
+• Browser: Google Chrome
+
+Steps:
+Add all the products to the shopping cart
+Verify adding to the cart
+Remove all the products to the shopping cart
+Verify removing from the cart
+
+
+Expected Result:
+• 
+-------------------------------------------------------------------
+TC-3: Complete Checkout
+
+Precondition:
+• Browser: Google Chrome (latest version)
+
+Steps:
+Login
+Add product to the cart
+Open cart
+Click on checkout button
+Fill First name, Last name and Zip/Postal code 
+Click on Continue button
+Verify item name in the cart
+Click on Finish button
+
+Expected Result:
+•  Verify your order confirmation. Whole flow should pass completle
+-------------------------------------------------------------------
+TC-4: 
+
+Precondition:
+• Browser: Google Chrome (latest version)
+
+Steps:
+
+
+
+Expected Result:
+• 
