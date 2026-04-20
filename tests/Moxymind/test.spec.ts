@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 import { LoginPage } from '../../pages/LoginPage';
 
-test.describe('Sauce Demo Logins', () => {
+test.describe('TC-1 Sauce Demo Logins', () => {
 
     test('Login - standard user', async ({ page }) => {
         const loginPage = new LoginPage(page);
