@@ -18,7 +18,6 @@ Steps:
 Expected Result:
 
     • Login is successful for: standard_user, problem_user, performance_glitch_user, error_user, and visual_user.
-
     • Login fails for locked_out_user (appropriate error message is displayed).
 -------------------------------------------------------------------
 TC-2: Adding and Removing Items from the Cart
@@ -41,7 +40,6 @@ Steps:
 Expected Result:
 
     • All products are successfully added to the cart initially.
-
     • All products are successfully removed, leaving the cart empty at the end of the test.
 -------------------------------------------------------------------
 TC-3: Complete Checkout
@@ -51,31 +49,20 @@ Precondition:
 
 Steps:
     1. Navigate to https://www.saucedemo.com/.
-
-    2. Enter a valid username (e.g., standard_user).
-
+    2. Enter a valid username (standard_user).
     3. Enter the valid password secret_sauce.
-
     4. Click the "Login" button
-
-    5. Add a product to the shopping cart.
-
+    5. Add a product Backpack to the shopping cart.
     6. Open the shopping cart.
-
     7. Click the "Checkout" button.
-
     8. Enter the First Name, Last Name, and Zip/Postal Code.
-
     9. Click the "Continue" button.
-
     10. Verify that the item name in the order overview matches the item added.
-
-    11 .Click the "Finish" button.
+    11. Click the "Finish" button.
 
 Expected Result:
 
     • The order confirmation page is displayed.
-
     • The entire checkout workflow is completed successfully without errors.
 -------------------------------------------------------------------
 TC-4: Login with delay
@@ -86,15 +73,11 @@ Precondition:
 Steps:
 
     1. Navigate to the login page.
-
     2. Enter the username performance_glitch_user.
-
     3. Enter the valid password secret_sauce.
-
     4. Click the "Login" button.
 
 Expected Result:
 
     • The login process completes and the Products page loads successfully.
-
     • Note: A noticeable delay (latency) during the transition to the inventory page is expected for this specific user.

@@ -50,6 +50,7 @@ test.describe('TC-1 Sauce Demo Logins', () => {
     });
 });
 
+
 test.describe('TC-2 Adding and Removing items from the Cart', () => {
 
     test('Adding and Removing items from the Cart', async ({ page }) => {
@@ -88,6 +89,7 @@ test.describe('TC-2 Adding and Removing items from the Cart', () => {
     })
 });
 
+
 test.describe('TC-3 Complete Checkout', () => {
 
     test('Complete Checkout', async ({ page }) => {
@@ -110,6 +112,7 @@ test.describe('TC-3 Complete Checkout', () => {
         await expect(successHeader).toHaveText('Thank you for your order!');
     })
 });
+
 
 test.describe('TC-4 Login with delay', () => {
 
