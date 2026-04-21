@@ -37,3 +37,6 @@ Prerequisites
 
 Moxymind Technical Task 3 - Mobile automation
 
+
+!!I also added a file with the known bugs to the repo.
+
